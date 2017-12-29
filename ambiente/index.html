@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Execução da Imagem - Deep Learning Summer School - Instruções de preparação do Ambiente para o curso</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Execução da Imagem";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Deep Learning Summer School - Instruções de preparação do Ambiente para o curso</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introdução</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../docker/">Instalação do Docker</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Execução da Imagem</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#execucao-da-imagem">Execução da Imagem</a></li>
+                
+                    <li><a class="toctree-l4" href="#comando-para-iniciar-jupyter-lab">Comando para iniciar Jupyter Lab</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Deep Learning Summer School - Instruções de preparação do Ambiente para o curso</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Execução da Imagem</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="execucao-da-imagem">Execução da Imagem</h1>
+<p>Com o Docker instalado, resta executá-lo com uma das imagens disponibilizadas. Foram disponibilizadas duas imagens: uma com suporte a GPU e outra sem. Você deve utilizar a imagem com suporte a GPU apenas se seu computador possuir GPU e seu Sistema Operacional for o Linux. Caso tiver uma GPU e não estiver utilizando Linux, recomenda-se instalá-lo em sua máquina para utilizá-la (ela faz diferença no treinamento de redes neurais profundas).</p>
+<p>Algo importante de se entender, antes de prosseguir, é que é necessário mapear uma pasta de seu computador como um "volume" do Docker. Isso significa que essa pasta será compartilhada entre seu Sistema Operacional e o Docker. Assim, a aplicação executada no Docker poderá ler e escrever nessa pasta. Caso esse mapeamento não fosse feito, seria complicado acessar os arquivos gerados no Docker e eles poderiam ser perdidos. Logo, prepare uma pasta (de preferência vazia) e guarde seu caminho, pois ele será passado no comando de inicialização do Docker. A partir de agora, referenciaremos essa pasta como <code>&lt;workspace&gt;</code>. Logo, quando encontrar isso no comando, você deverá substituir pelo caminho de sua pasta.</p>
+<p>O nome da imagem disponibilizada é: <code>zgsolucoes/tensorflow-notebook</code>. Essa imagem está disponível no registro público do Docker (<a href="https://hub.docker.com/r/zgsolucoes/tensorflow-notebook">https://hub.docker.com/r/zgsolucoes/tensorflow-notebook</a>). Os comandos disponibilizados a seguir realizam download dessa imagem na primeira vez em que forem executados.</p>
+<h2 id="comando-para-iniciar-jupyter-lab">Comando para iniciar Jupyter Lab</h2>
+<p>Ao executar um dos comandos abaixo, um link na forma <a href="http://localhost:8888/?token=4b2113a4256f5678b965bb190f590725962a2342e3b5031b">http://localhost:8888/?token=4b2113a4256f5678b965bb190f590725962a2342e3b5031b</a> aparecerá em seu terminal. Copie e cole no navegador para abrir o Jupyter Lab.</p>
+<h3 id="sem-gpu">Sem GPU</h3>
+<h4 id="linux-e-mac-os">Linux e MAC OS</h4>
+<pre><code class="bash">docker run -it -p 8888:8888 -v &lt;workspace&gt;:/home/jovyan/work --user root -e NB_UID=$(id -u) -e NB_GID=$(id -g) zgsolucoes/tensorflow-notebook:latest start.sh jupyter lab
+</code></pre>
+
+<h4 id="windows">Windows</h4>
+<pre><code class="bash">docker run -it -p 8888:8888 -v &lt;workspace&gt;:/home/jovyan/work zgsolucoes/tensorflow-notebook:latest start.sh jupyter lab
+</code></pre>
+
+<h3 id="com-gpu-apenas-linux">Com GPU (apenas Linux)</h3>
+<p>Será necessário instalar o <code>nvidia-docker</code>, que está disponível apenas para Linux. Siga a instruções da <a href="https://github.com/nvidia/nvidia-docker/wiki/Installation-%28version-2.0%29">Documentação Oficial</a>. Depois de instalar e testar que seu hardware e drivers são compatíveis como explicado nas instruções, execute o comando a seguir para rodar a imagem.</p>
+<pre><code class="bash">nvidia-docker run -it -p 8888:8888 -v &lt;workspace&gt;:/home/jovyan/work --user root -e NB_UID=$(id -u) -e NB_GID=$(id -g) zgsolucoes/tensorflow-notebook:latest-gpu start.sh jupyter lab
+</code></pre>
+
+<h3 id="observacoes">Observações</h3>
+<p>Os comandos anteriores executarão o Jupyter Lab, que está em Beta no momento. Caso prefira executar o clássico Jupyter no lugar, remova o final <code>lab</code> do comando.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../docker/" class="btn btn-neutral" title="Instalação do Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../docker/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

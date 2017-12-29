@@ -1,6 +1,0 @@
-site_name: Deep Learning Summer School - Instruções de preparação do Ambiente para o curso
-pages:
-- Introdução: index.md
-- Instalação do Docker: docker.md
-- Execução da Imagem: ambiente.md
-theme: readthedocs
