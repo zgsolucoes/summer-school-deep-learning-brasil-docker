@@ -3,11 +3,11 @@ Com o Docker instalado, resta executá-lo com uma das imagens disponibilizadas. 
 
 Algo importante de se entender, antes de prosseguir, é que é necessário mapear uma pasta de seu computador como um "volume" do Docker. Isso significa que essa pasta será compartilhada entre seu Sistema Operacional e o Docker. Assim, a aplicação executada no Docker poderá ler e escrever nessa pasta. Caso esse mapeamento não fosse feito, seria complicado acessar os arquivos gerados no Docker e eles poderiam ser perdidos. Logo, prepare uma pasta (de preferência vazia) e guarde seu caminho, pois ele será passado no comando de inicialização do Docker. A partir de agora, referenciaremos essa pasta como `<workspace>`. Logo, quando encontrar isso no comando, você deverá substituir pelo caminho de sua pasta.
 
-O nome da imagem disponibilizada é: `zgsolucoes/tensorflow-notebook`. Essa imagem está disponível no registro público do Docker (https://hub.docker.com/r/zgsolucoes/tensorflow-notebook). Os comandos disponibilizados a seguir realizam download dessa imagem na primeira vez em que forem executados.
+O nome da imagem disponibilizada é: `zgsolucoes/tensorflow-notebook`. Essa imagem está disponível no registro público do Docker ([https://hub.docker.com/r/zgsolucoes/tensorflow-notebook](https://hub.docker.com/r/zgsolucoes/tensorflow-notebook)). Os comandos disponibilizados a seguir realizam download dessa imagem na primeira vez em que forem executados.
 
 ## Comando para iniciar Jupyter Lab
 
-Ao executar um dos comandos abaixo, um link na forma `http://localhost:8888/?token=4b2113a4256f5678b965bb190f590725962a2342e3b5031b` aparecerá em seu terminal. Copie e cole no navegador para abrir o Jupyter Lab.
+Ao executar um dos comandos abaixo, um link na forma [http://localhost:8888/?token=4b2113a4256f5678b965bb190f590725962a2342e3b5031b](http://localhost:8888/?token=4b2113a4256f5678b965bb190f590725962a2342e3b5031b) aparecerá em seu terminal. Copie e cole no navegador para abrir o Jupyter Lab.
 
 ### Sem GPU
 
