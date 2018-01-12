@@ -12,7 +12,7 @@
         },
         {
             "location": "/docker/",
-            "text": "Instala\u00e7\u00e3o do Docker\n\n\nO primeiro passo \u00e9 a instala\u00e7\u00e3o do Docker. Existem v\u00e1rias op\u00e7\u00f5es de instala\u00e7\u00e3o de acordo com o Sistema Operacional utilizado. Deve-se instalar a vers\u00e3o Community Edition por ser gratuita. O seguinte link possui instru\u00e7\u00f5es (em ingl\u00eas) de como proceder:\n\n\nhttps://docs.docker.com/engine/installation/\n\n\nOs seguintes links possuem explica\u00e7\u00f5es em portugu\u00eas:\n\n\n\n\nUbuntu: \nhttps://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt\n\n\nWindows: \nhttps://talkitbr.com/2016/10/20/usando-docker-no-windows-10/\n\n\nMac OS: \nhttps://gabrielfelipesoares.wordpress.com/2016/01/28/rodando-docker-mac-os-x/\n\n\n\n\nPassos extras para Linux\n\n\nAp\u00f3s a instala\u00e7\u00e3o, voc\u00ea dever\u00e1 conseguir rodar o comando \ndocker\n, mas precisar\u00e1 utilizar um usu\u00e1rio root (\nsudo\n no Ubuntu). Para que isso n\u00e3o seja mais necess\u00e1rio, voc\u00ea deve adicionar seu usu\u00e1rio no grupo \ndocker\n. Assim, ele ter\u00e1 permiss\u00e3o para invocar o Docker diretamente.\n\n\nComo root, execute o comando: \nsudo usermod -aG docker $(whoami)",
+            "text": "Instala\u00e7\u00e3o do Docker\n\n\nO primeiro passo \u00e9 a instala\u00e7\u00e3o do Docker. Existem v\u00e1rias op\u00e7\u00f5es de instala\u00e7\u00e3o de acordo com o Sistema Operacional utilizado. Deve-se instalar a vers\u00e3o Community Edition por ser gratuita. O seguinte link possui instru\u00e7\u00f5es (em ingl\u00eas) de como proceder:\n\n\nhttps://docs.docker.com/engine/installation/\n\n\nOs seguintes links possuem explica\u00e7\u00f5es em portugu\u00eas:\n\n\n\n\nUbuntu: \nhttps://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt\n\n\nWindows: \nhttps://talkitbr.com/2016/10/20/usando-docker-no-windows-10/\n\n\nMac OS: \nhttps://gabrielfelipesoares.wordpress.com/2016/01/28/rodando-docker-mac-os-x/\n\n\n\n\nPassos extras para Linux\n\n\nAp\u00f3s a instala\u00e7\u00e3o, voc\u00ea dever\u00e1 conseguir rodar o comando \ndocker\n, mas precisar\u00e1 utilizar um usu\u00e1rio root (\nsudo\n no Ubuntu). Para que isso n\u00e3o seja mais necess\u00e1rio, voc\u00ea deve adicionar seu usu\u00e1rio no grupo \ndocker\n. Assim, ele ter\u00e1 permiss\u00e3o para invocar o Docker diretamente.\n\n\nComo root, execute o comando: \nsudo usermod -aG docker $(whoami)\n\n\nCheat sheet de comandos do Docker\n\n\nSe tudo der certo, n\u00e3o ser\u00e1 necess\u00e1rio conhecimento em Docker para preparar a m\u00e1quina. Por\u00e9m, \u00e9 sempre \u00fatil entender pelo menos os comandos b\u00e1sicos. O seguinte link apresenta um Cheat sheet dos comandos b\u00e1sicos do Docker: \nhttps://www.cheatography.com/tobix10/cheat-sheets/docker-commands/",
             "title": "Instala\u00e7\u00e3o do Docker"
         },
         {
@@ -24,6 +24,11 @@
             "location": "/docker/#passos-extras-para-linux",
             "text": "Ap\u00f3s a instala\u00e7\u00e3o, voc\u00ea dever\u00e1 conseguir rodar o comando  docker , mas precisar\u00e1 utilizar um usu\u00e1rio root ( sudo  no Ubuntu). Para que isso n\u00e3o seja mais necess\u00e1rio, voc\u00ea deve adicionar seu usu\u00e1rio no grupo  docker . Assim, ele ter\u00e1 permiss\u00e3o para invocar o Docker diretamente.  Como root, execute o comando:  sudo usermod -aG docker $(whoami)",
             "title": "Passos extras para Linux"
+        },
+        {
+            "location": "/docker/#cheat-sheet-de-comandos-do-docker",
+            "text": "Se tudo der certo, n\u00e3o ser\u00e1 necess\u00e1rio conhecimento em Docker para preparar a m\u00e1quina. Por\u00e9m, \u00e9 sempre \u00fatil entender pelo menos os comandos b\u00e1sicos. O seguinte link apresenta um Cheat sheet dos comandos b\u00e1sicos do Docker:  https://www.cheatography.com/tobix10/cheat-sheets/docker-commands/",
+            "title": "Cheat sheet de comandos do Docker"
         },
         {
             "location": "/ambiente/",
