@@ -14,3 +14,7 @@ Os seguintes links possuem explicações em português:
 Após a instalação, você deverá conseguir rodar o comando `docker`, mas precisará utilizar um usuário root (`sudo` no Ubuntu). Para que isso não seja mais necessário, você deve adicionar seu usuário no grupo `docker`. Assim, ele terá permissão para invocar o Docker diretamente.
 
 Como root, execute o comando: `sudo usermod -aG docker $(whoami)`
+
+## Cheat sheet de comandos do Docker
+
+Se tudo der certo, não será necessário conhecimento em Docker para preparar a máquina. Porém, é sempre útil entender pelo menos os comandos básicos. O seguinte link apresenta um Cheat sheet dos comandos básicos do Docker: [https://www.cheatography.com/tobix10/cheat-sheets/docker-commands/](https://www.cheatography.com/tobix10/cheat-sheets/docker-commands/)
